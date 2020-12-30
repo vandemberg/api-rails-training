@@ -8,9 +8,8 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors'
-
-gem 'devise'
 gem 'jwt'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
