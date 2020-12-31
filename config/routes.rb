@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :customers
-
+  resources :payments, only: [:index, :update]
+  resources :customers, only: [:index]
   resources :users, param: :_username
+  resources :orders, only: [:create]
 
   post '/login', to: 'authentication#login'
-  get '/*a', to: 'application#not_found'
 end
