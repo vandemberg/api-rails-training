@@ -17,18 +17,20 @@ class BuildNewOrder
       price: @data[:price],
       interval: @data[:interval],
       product: @data[:product],
+      pieces: @data[:pieces],
     })
 
     value_per_payment = @data[:price].to_f / @data[:pieces].to_f
     payment_day = @data[:date].to_date
 
-    @data[:pieces].to_i.times.each do |index|
+    @data[:pieces].to_i.times.each do |time|
       Payment.create({
         order_id: order.id,
         pay_day: payment_day,
         total: value_per_payment,
         value_payed: 0,
         interest: 0,
+        number_piece: time,
       })
 
       payment_day += order.interval.days
