@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
-
 gem 'rails', '~> 6.1.0'
 gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
@@ -13,6 +11,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 4.0.2'
 end
 
 group :development do
